@@ -1,0 +1,11 @@
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: hotpink;
+}
+
+mat-card-header {
+  color: red;
+}
+

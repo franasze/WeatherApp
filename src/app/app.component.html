@@ -1,30 +1,21 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
+<mat-toolbar style="background-color: #1976d2">
   <button mat-icon-button routerLink="/">
-    <mat-icon>cloud</mat-icon>
+    <mat-icon class="cloudIcon">cloud</mat-icon>
   </button>
-  <span><b>POGODA</b></span>
+  <button mat-button routerLink="/">
+    <span><b>POGODA</b></span>
+  </button>
   <div class="spacer"></div>
   <a href="https://github.com/franasze" target="_blank" rel="noopener">
-  <button mat-button >
-  <mat-icon>computer</mat-icon>
-  <p style="margin-right: 25px"> <i>Arkadiusz Franaszek</i></p>
-  </button>
+    <button mat-button>
+      <mat-icon>computer</mat-icon>
+      <p style="margin-right: 25px"><i>Arkadiusz Franaszek</i></p>
+    </button>
   </a>
-</div>
+</mat-toolbar>
 
+<router-outlet></router-outlet>
 
-<!-- Footer -->
-<footer>
-  <a href=" https://open-meteo.com/en/docs" target="_blank" rel="noopener">
-    Strona z ktorej pobieram dane:
-    https://open-meteo.com/en/docs
-    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/>
-      <path d="M0 0h24v24H0z" fill="none"/>
-    </svg>
-  </a>
-</footer>
 <!-- chmurki w tle-->
 <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
   <title>Gray Clouds Background</title>
@@ -34,3 +25,16 @@
 </svg>
 
 
+<mat-toolbar style="background-color: transparent; font-size: 12px">
+  <span>WeatherApp 2023</span>
+  <div class="spacer"></div>
+  <a href=" https://open-meteo.com/en/docs" target="_blank" rel="noopener">
+    Strona z ktorej pobieram dane: https://open-meteo.com/en/docs
+
+  </a>
+  <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+  </svg>
+
+</mat-toolbar>

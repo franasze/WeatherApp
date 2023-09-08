@@ -1,23 +1,23 @@
-<div class="content" role="main">
-
+<mat-card class="content" role="main">
+  <br><br>
   <!-- Resources -->
-  <h1><b><i>POGODA<br>KRAKÓW</i></b></h1>
-
-  <div class="card-container">
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-      <span style="font-size: 30px">Dzisiaj<br><br><p style="font-size: 75px">29C</p></span>
+  <h1><b><i>POGODA KRAKÓW</i></b></h1>
+  <h2> {{forecast['currentDay']}}
+    {{forecast['formattedDate']}}</h2>
+  <mat-card-content class="card-container">
+    <a class="card" routerLink="/hourly-weather">
+      <span> <b>Dzisiaj</b>
+        <br><br><br> <p>{{forecast['temperature']}}°C</p></span>
     </a>
 
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
-      <span style="font-size: 30px">Jutro<br><br><p style="font-size: 75px">29C</p></span>
+    <a class="card" routerLink="/hourly-weather">
+      <span><b>Jutro</b>
+        <br><br><br> <p>{{forecast['temperatureTomorrow']}}°C</p></span>
     </a>
 
-    <a class="card">
-      <div clas="aaa" *ngIf="showComponentTwo">
-        <button (click)="loadComponentTwo()">Wczytaj Komponent Two</button>
-        <span style="font-size: 30px">Pojutrze<br><br><p style="font-size: 75px">29C</p></span>
-      </div>
+    <a class="card" routerLink="/hourly-weather">
+      <span><b>Pojutrze</b>
+        <br><br><br> <p>{{forecast['temperatureAfterTomorrow']}}°C</p></span>
     </a>
-
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

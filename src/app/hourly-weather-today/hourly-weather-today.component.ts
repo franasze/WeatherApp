@@ -11,14 +11,14 @@ export interface WeatherStatistic {
   windspeed: number;
 }
 
-let ELEMENT_DATA_FIRST: WeatherStatistic[] = [];
-
+let ELEMENT_DATA: WeatherStatistic[] = [];
 @Component({
-  selector: 'app-hourly-weather',
-  templateUrl: './hourly-weather.component.html',
-  styleUrls: ['./hourly-weather.component.css']
+  selector: 'app-hourly-weather-today',
+  templateUrl: './hourly-weather-today.component.html',
+  styleUrls: ['./hourly-weather-today.component.css']
 })
-export class HourlyWeatherComponent implements OnInit {
+
+export class HourlyWeatherTodayComponent implements OnInit {
   myData: any;
   forecast: Record<string, any> ={}
   dataSourceFirst: WeatherStatistic[] = [];
@@ -43,14 +43,14 @@ export class HourlyWeatherComponent implements OnInit {
         this.forecast['windspeeds'] = windspeeds;
         this.forecast['rains'] = rains;
 
-        this.forecast['formattedDate'] = this.weatherService.getFormattedDate();
+        this.forecast['formattedDate'] = this.weatherService.getFormattedDate(0);
 
 
 
 
 
         for (let i = 0; i < this.forecast['times'].length; i++) {
-          const currentDate = this.weatherService.getTodayDate();
+          const currentDate = this.weatherService.getTodayDate(0);
           const forecastTime = this.forecast['times'][i];
           const forecastData = { // 1.
             time: forecastTime,
@@ -60,14 +60,11 @@ export class HourlyWeatherComponent implements OnInit {
             // relativehumiditys: this.forecast['relativehumiditys'][i],
           };
 
-          switch (true) { // 2.
-            case this.weatherService.checkTwoDates(currentDate, forecastTime): // 3.
-              ELEMENT_DATA_FIRST.push(forecastData);
-              break;
-
+          if(this.weatherService.checkTwoDates(this.weatherService.getTodayDate(0), forecastTime)){
+            ELEMENT_DATA.push(forecastData);
           }
         }
-        this.dataSourceFirst = ELEMENT_DATA_FIRST;
+        this.dataSourceFirst = ELEMENT_DATA;
       });
   }
   displayedColumns: string[] = [

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit{
       // this.forecast['afterTomorrowWeather'] = this.weatherService.getDailyWeather(daily, code, 2);
 
       this.forecast['currentDay'] = this.weatherService.getTodayDay();
-      this.forecast['formattedDate'] = this.weatherService.getFormattedDate();
+      this.forecast['formattedDate'] = this.weatherService.getFormattedDate(0);
     });
   }
 

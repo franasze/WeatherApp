@@ -5,17 +5,17 @@
   <h2> {{forecast['currentDay']}}
     {{forecast['formattedDate']}}</h2>
   <mat-card-content class="card-container">
-    <a class="card" routerLink="/hourly-weather">
+    <a class="card" routerLink="/hourly-weather-today">
       <span> <b>Dzisiaj</b>
         <br><br><br> <p>{{forecast['temperature']}}°C</p></span>
     </a>
 
-    <a class="card" routerLink="/hourly-weather">
+    <a class="card" routerLink="/hourly-weather-tomorrow">
       <span><b>Jutro</b>
         <br><br><br> <p>{{forecast['temperatureTomorrow']}}°C</p></span>
     </a>
 
-    <a class="card" routerLink="/hourly-weather">
+    <a class="card" routerLink="/hourly-weather-day-after-tomorrow">
       <span><b>Pojutrze</b>
         <br><br><br> <p>{{forecast['temperatureAfterTomorrow']}}°C</p></span>
     </a>

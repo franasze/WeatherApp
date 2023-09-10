@@ -4,16 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.component';
+import { HourlyWeatherTodayComponent } from './hourly-weather-today/hourly-weather-today.component';
 import {MaterialModule} from "./material/material.module";
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
+import { HourlyWeatherTomorrowComponent } from './hourly-weather-tomorrow/hourly-weather-tomorrow.component';
+import { HourlyWeatherDayAfterTomorrowComponent } from './hourly-weather-day-after-tomorrow/hourly-weather-day-after-tomorrow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HourlyWeatherComponent,
-    HomeComponent
+    HourlyWeatherTodayComponent,
+    HomeComponent,
+    HourlyWeatherTomorrowComponent,
+    HourlyWeatherDayAfterTomorrowComponent
   ],
   imports: [
     BrowserModule,

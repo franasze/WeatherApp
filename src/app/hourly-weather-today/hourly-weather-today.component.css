@@ -2,13 +2,7 @@ mat-card {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
   border-radius: 0;
-
-}
-
-th {
-  /*text-align: center;*/
 }
 
 h1 {
@@ -32,28 +26,3 @@ h2{
   border-radius: 8px;
   text-align: center;
 }
-
-
-/*table{*/
-/*  padding: 5px;*/
-/*  margin: 5px;*/
-/*}*/
-/*!**!*/
-/*.small-icons-today-weahter {*/
-/*  width: 35px;*/
-/*  height: 35px;*/
-/*}*/
-
-/*table td {*/
-/*  padding: 5px;*/
-/*  margin: 5px;*/
-/*}*/
-
-/*.todayWeather table ng-container {*/
-/*  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);*/
-/*}*/
-
-/*.todayWeather table {*/
-/*  width: 100%;*/
-/*}*/
-

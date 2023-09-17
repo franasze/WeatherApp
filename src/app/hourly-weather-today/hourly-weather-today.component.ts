@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
 
 import {WeatherServiceService} from "../service/weather-service.service";
 
@@ -12,6 +11,7 @@ export interface WeatherStatistic {
 }
 
 let ELEMENT_DATA: WeatherStatistic[] = [];
+
 @Component({
   selector: 'app-hourly-weather-today',
   templateUrl: './hourly-weather-today.component.html',
@@ -37,30 +37,22 @@ export class HourlyWeatherTodayComponent implements OnInit {
         let windspeeds: any = this.myData['hourly']['windspeed_10m'];
         let rains: any = this.myData['hourly']['rain'];
 
-
         this.forecast['times'] = times;
         this.forecast['temperatures'] = temperatures;
         this.forecast['windspeeds'] = windspeeds;
         this.forecast['rains'] = rains;
-
         this.forecast['formattedDate'] = this.weatherService.getFormattedDate(0);
 
-
-
-
-
         for (let i = 0; i < this.forecast['times'].length; i++) {
-          const currentDate = this.weatherService.getTodayDate(0);
           const forecastTime = this.forecast['times'][i];
-          const forecastData = { // 1.
+          const forecastData = {
             time: forecastTime,
             temperature: this.forecast['temperatures'][i],
             rain: this.forecast['rains'][i],
             windspeed: this.forecast['windspeeds'][i],
-            // relativehumiditys: this.forecast['relativehumiditys'][i],
           };
 
-          if(this.weatherService.checkTwoDates(this.weatherService.getTodayDate(0), forecastTime)){
+          if(this.weatherService.checkTwoDates(this.weatherService.getTodayDate(2), forecastTime)){
             ELEMENT_DATA.push(forecastData);
           }
         }

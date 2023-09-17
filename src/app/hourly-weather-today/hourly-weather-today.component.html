@@ -7,7 +7,8 @@
     </mat-card-content>
     <div class="todayWeather">
       <h2>Dzisiaj</h2>
-      <table mat-table [dataSource]="dataSourceFirst">
+
+      <table mat-table [dataSource]="dataSourceFirst" >
 
         <ng-container matColumnDef="time">
           <th mat-header-cell *matHeaderCellDef>
@@ -21,7 +22,6 @@
           <th mat-header-cell *matHeaderCellDef>
             <img width="50" height="50" src="https://img.icons8.com/ios/50/thermometer.png" alt="thermometer"/>
             <p>°C</p>
-
           </th>
           <td mat-cell *matCellDef="let element">{{ element.temperature }}°C</td>
         </ng-container>
@@ -34,7 +34,8 @@
         </ng-container>
 
         <ng-container matColumnDef="windspeed">
-          <th mat-header-cell *matHeaderCellDef><img width="50" height="50" src="https://img.icons8.com/ios/50/wind--v1.png" alt="wind"/>
+          <th mat-header-cell *matHeaderCellDef>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/wind--v1.png" alt="wind"/>
             <p>km/h</p>
           </th>
           <td mat-cell *matCellDef="let element">{{ element.windspeed }} km/h</td>
